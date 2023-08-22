@@ -121,7 +121,7 @@ if(empty(sesuser('id_pengguna'))){
 										<div class="col-md-6">
 										<div class="form-group">
 												<label>Alamat Kantor:</label>
-												<input type="text" name="alamat" class="form-control" placeholder="Alamat Kantor" required>
+												<input type="text" name="alamat" class="form-control" placeholder="Alamat Kantor" value="Komplek Perkantoran Pemda Rokan Hulu" required>
 											</div>
 											<div class="form-group">
 												<label>Gol.Darah:</label>

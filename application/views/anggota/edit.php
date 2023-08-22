@@ -4,11 +4,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 if(empty(sesuser('id_pengguna'))){
 	redirect("/auth/login", refresh);
 }
-$nosmasuk = $this->uri->segment(3);
+$nosmasuk = antixss(dekrip($this->uri->segment(3)));
 $sdata = $this->db->get_where("suratmasuk", array("nosmasuk" => $nosmasuk));
 $hdata = $sdata->num_rows();
 if($hdata == 0){
-	redirect(base_url("suratmasuk"));
+	redirect(base_url("anggota"));
 }
 $ddata = $sdata->result_array();
 ?><!DOCTYPE html>
@@ -91,10 +91,10 @@ $ddata = $sdata->result_array();
 								</div>
                                 
 								<div class="card-body">
-								<div class="row">
+									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<label class="font-weight-bold text-primary">NO. FAKTUR: <span class="text-danger">*auto</span></label>
+												<label class="font-weight-bold text-primary">NO. Anggota: <span class="text-danger">*auto</span></label>
 												<input type="text" name="nosmasuk" class="form-control font-weight-bold" value="<?= $nosmasuk ?>" readonly>
 											</div>
 											<div class="form-group">
@@ -130,7 +130,7 @@ $ddata = $sdata->result_array();
 											
 										</div>
 										<div class="col-md-6">
-										<div class="form-group">
+											<div class="form-group">
 												<label>Alamat Kantor:</label>
 												<input type="text" value="<?= $ddata[0]['alamat'] ?>" name="alamat" class="form-control" placeholder="Alamat Kantor" required>
 											</div>
@@ -159,7 +159,7 @@ $ddata = $sdata->result_array();
 											<div class="form-group">
 												<label>Berkas Surat (PDF): <small class="text-warning">* Biarkan kosong jika tidak merubah berbas.</small></label>
 												<div class="form-group">
-													<input type="file" name="berkas" class="form-control" id="inputGroupFile04" accept="application/gif|jpg|png|jpegf">
+													<input type="file" name="berkas" class="form-control" id="inputGroupFile04" accept="application/gif|jpg|png|jpeg">
 													
 												</div>
 											</div>

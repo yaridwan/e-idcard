@@ -35,7 +35,7 @@
 		if ($hdata > 0) {
 			$ddata			= $sdata->result_array();
 			$id_max_data	= $ddata[0]['max_id'];
-			$sort_data 		= (int) substr($id_max_data, 0, 4);
+			$sort_data 		= (int) substr((string)$id_max_data, 0, 4);
 			$sort_data++;
 			$new_data 		= $tglauto .".SM.". sprintf("%04s", $sort_data);
 		} else {
