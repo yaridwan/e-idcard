@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database', 'session', 'CekGroupModul', 'Autonumber', 'Fungsiumum', 'Notifikasi', 'user_agent' => 'ua');
+$autoload['libraries'] = array('database', 'session', 'CekGroupModul', 'Autonumber', 'Fungsiumum', 'FirexGanteng', 'Firexantixss', 'user_agent' => 'ua');
 
 /*
 | -------------------------------------------------------------------

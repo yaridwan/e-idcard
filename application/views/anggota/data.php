@@ -97,14 +97,10 @@ if(isset($post['hapusin'])){
                                     <th class="text-center">No.</th>
                                     <th>No. Anggota</th>
 									<th>Nama</th>
-                                                    <th>NIP</th>
-                                                    <th>Jenis Kelamin</th>
-                                                    <th>Jabatan</th>
-                                                  <!--   <th>Gol. Darah</th> -->
-                                                    <!-- <th>Tanggal Dikeluarkan</th> -->
-                                                    
-                                                     <!-- <th>Alamat Kantor</th> -->
-                                                    <th>Jenis Status</th>
+                                    <th>NIP</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>Jabatan</th>
+                                    <th>Jenis Status</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
@@ -120,22 +116,17 @@ if(isset($post['hapusin'])){
                                                 <td class='text-center'>".$nodata."</td>
                                                 <td>".$ddata['nosmasuk']."</td>
 												<td>".$ddata['nm_anggota']."</td>
-                                                                <td>".$ddata['nip']."</td>
-                                                                <td>".$ddata['nm_jk']."</td>
-                                                                <td>".$ddata['jabatan']."</td>
-																<!-- <td>".$ddata['gol_darah']."</td>  -->
-																<!-- 	<td>".tgl_indo($ddata['tanggal'])."</td> -->
-																<!--  <td>".$ddata['alamat']."</td> -->
-																
+                                                <td>".$ddata['nip']."</td>
+                                                <td>".$ddata['nm_jk']."</td>
+                                                <td>".$ddata['jabatan']."</td>
 												<td>".$ddata['nm_jenissurat']."</td>
                                                 <td class='text-center'>
                                                     <div class='btn-group'>
-                                                        <a href='".base_url("anggota/edit/".$ddata['nosmasuk'])."' class='btn btn-primary'><i class='icon-pencil7'></i></a>
+                                                        <a href='".base_url("anggota/edit/".enkrip($ddata['nosmasuk']))."' class='btn btn-primary'><i class='icon-pencil7'></i></a>
                                                         <a href='#' class='btn btn-danger bthapus' data-toggle='modal' data-target='#modalHapus' data-id='".$ddata['nosmasuk']."' data-nama='".$ddata['nm_anggota']."'><i class='icon-trash'></i></a>
-                                                        <a href='".base_url("anggota/detail/".$ddata['nosmasuk'])."' class='btn btn-dark'><i class='icon-eye'></i></a>
-
-
-														<a href='".base_url("cetak/jpg/".$ddata['nosmasuk'])."' target='_blank' class='btn btn-warning'><i class='icon-printer'></i></a>
+                                                        <!--<a href='".base_url("anggota/detail/".enkrip($ddata['nosmasuk']))."' class='btn btn-dark'><i class='icon-eye'></i></a>-->
+														<a href='".base_url("anggota/carddepan/".enkrip($ddata['nosmasuk']))."' target='_blank' class='btn bg-purple-800'><i class='icon-printer pr-2'></i> Depan</a>
+														<a href='".base_url("anggota/cardbelakang/".enkrip($ddata['nosmasuk']))."' target='_blank' class='btn bg-purple-600'><i class='icon-printer pr-2'></i> Belakang</a>
                                                     </div>
                                                 </td>
                                             </tr>
